@@ -72,4 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # untracking file
-"C:\Users\s101c\GitHub\CircleActivities_Ver01\Assets\WIP"*
+Assets/WIP*

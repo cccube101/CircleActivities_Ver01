@@ -1,7 +1,6 @@
 using UnityEngine;
 
-    #ROOTNAMESPACEBEGIN#
-public class #SCRIPTNAME# : MonoBehaviour
+public class Template : MonoBehaviour
 {
     // ---------------------------- SerializeField
 
@@ -24,5 +23,13 @@ public class #SCRIPTNAME# : MonoBehaviour
     // ---------------------------- PrivateMethod
 
 
+
+    #region ------ Base
+
+
+    #endregion
+
+    // ---------------------------- Enum
+
+    // ---------------------------- Property
 }
-#ROOTNAMESPACEEND#

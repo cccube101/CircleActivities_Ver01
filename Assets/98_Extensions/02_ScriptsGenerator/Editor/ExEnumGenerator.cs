@@ -28,7 +28,7 @@ namespace UnityCodeGen
         /// <param name="context"></param>
         public void Execute(GeneratorContext context)
         {
-            context.OverrideFolderPath("Assets/00_GameData/Scripts/00_Base");
+            context.OverrideFolderPath("Assets/01_GameData/Scripts/00_Base");
 
             //  ÉVÅ[ÉìEnum
             var scenes = EditorBuildSettings.scenes

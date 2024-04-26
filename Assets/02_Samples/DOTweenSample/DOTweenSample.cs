@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DOTweenSample : MonoBehaviour
 {
@@ -9,26 +10,45 @@ public class DOTweenSample : MonoBehaviour
         Move,
         LoopMove,
         RectMove,
-
-
+        Virtual,
+        Fade,
+        Color,
+        //  ÇªÇÃëºÅ@Path,Text,ScaleìôÇ™Ç†ÇÈ
 
     }
 
     // ---------------------------- SerializeField
+    [Header("äÓëb")]
     [SerializeField] private Type _type;
-    [SerializeField] private Transform _pos;
     [SerializeField] private float _duration;
     [SerializeField] private Ease _ease;
 
+    [Header("Move")]
+    [SerializeField] private Transform _pos;
+
+    [Header("Loop")]
     [SerializeField] private int _loopTimes;
     [SerializeField] private LoopType _loopType;
 
+    [Header("RectTransform")]
     [SerializeField] private Vector2 _rectPos;
+
+    [Header("Virtual")]
+    [SerializeField] private Slider _slider;
+    [SerializeField] private float _endValue;
+
+    [Header("Fade")]
+    [SerializeField] private Image _fadeImage;
+
+    [Header("Color")]
+    [SerializeField] private Image _colorImage;
+    [SerializeField] private Color _color;
 
     // ---------------------------- Field
     private bool _isTween = false;
     private Vector3 _initPos;
     private Vector2 _initRectPos;
+    private Color _initColor;
 
 
     // ---------------------------- UnityMessage
@@ -36,14 +56,19 @@ public class DOTweenSample : MonoBehaviour
     {
         DG.Tweening.DOTween.SetTweensCapacity(tweenersCapacity: 5000, sequencesCapacity: 200);
 
-        if (!GetComponent<RectTransform>())
+        if (GetComponent<Image>())
         {
-            _initPos = transform.position;
+            _initColor = _colorImage.color;
         }
-        else
+        else if (GetComponent<RectTransform>())
         {
             _initRectPos = GetComponent<RectTransform>().anchoredPosition;
         }
+        else
+        {
+            _initPos = transform.position;
+        }
+
 
 
 
@@ -106,7 +131,55 @@ public class DOTweenSample : MonoBehaviour
 
                 break;
 
+            case Type.Virtual:
+                DOVirtual.Float(_slider.value, _endValue, _duration,
+                    (value) =>
+                    {
+                        _slider.value = value;
+                    })
+                    .SetLink(_slider.gameObject)
+                    .SetEase(_ease)
+                    .OnComplete(() =>
+                    {
+                        _slider.value = 0;
+                        _isTween = false;
+                    });
 
+                break;
+
+            case Type.Fade:
+                _fadeImage.DOFade(0, _duration)
+                    .SetLink(_fadeImage.gameObject)
+                    .SetEase(_ease)
+                    .OnComplete(() =>
+                    {
+                        _fadeImage.DOFade(1, _duration)
+                        .SetLink(_fadeImage.gameObject)
+                        .SetEase(_ease)
+                        .OnComplete(() =>
+                        {
+                            _isTween = false;
+                        });
+                    });
+
+                break;
+
+            case Type.Color:
+                _colorImage.DOColor(_color, _duration)
+                    .SetLink(_colorImage.gameObject)
+                    .SetEase(_ease)
+                    .OnComplete(() =>
+                    {
+                        _colorImage.DOColor(_initColor, _duration)
+                        .SetLink(_colorImage.gameObject)
+                        .SetEase(_ease)
+                        .OnComplete(() =>
+                        {
+                            _isTween = false;
+                        });
+                    });
+
+                break;
 
         }
     }

@@ -659,7 +659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1132916445
 RectTransform:
   m_ObjectHideFlags: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _duration: 1
-  _ease: 0
+  _ease: 1
   _pos: {fileID: 0}
   _loopTimes: 0
   _loopType: 0

@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using R3;
-using System;
 using System.Threading;
 using TMPro;
 using UnityEngine;
@@ -62,9 +61,9 @@ public class R3Sample : MonoBehaviour
     {
         //  HPŠÄŽ‹
         HP.Where(_ => _canConvertingToText)
-        .Subscribe(x =>
+        .Subscribe(hp =>
         {
-            _text.text = x.ToString();
+            _text.text = hp.ToString();
         })
         .AddTo(this);
     }
@@ -84,7 +83,7 @@ public class R3Sample : MonoBehaviour
 
         // UniTask‚ðŽg—p‚·‚éê‡‚Ì subscribe
         _btn_await.OnClickAsObservable()
-        .SubscribeAwait(async (state, ct) =>
+        .SubscribeAwait(async (_, ct) =>
         {
             _hp.Value += _addHp;
             await CountText(_text, _hp.Value, _duration, ct);

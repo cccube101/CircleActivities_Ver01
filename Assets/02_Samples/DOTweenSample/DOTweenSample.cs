@@ -56,11 +56,13 @@ public class DOTweenSample : MonoBehaviour
     {
         DG.Tweening.DOTween.SetTweensCapacity(tweenersCapacity: 5000, sequencesCapacity: 200);
 
-        if (GetComponent<Image>())
+        if (GetComponent<Image>()
+            && _colorImage != null)
         {
             _initColor = _colorImage.color;
         }
-        else if (GetComponent<RectTransform>())
+
+        if (GetComponent<RectTransform>())
         {
             _initRectPos = GetComponent<RectTransform>().anchoredPosition;
         }

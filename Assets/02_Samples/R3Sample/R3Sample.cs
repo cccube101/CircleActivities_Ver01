@@ -21,13 +21,12 @@ public class R3Sample : MonoBehaviour
 
 
 
-
-
     // ---------------------------- Field
-    private ReactiveProperty<int> _hp = new();
+    private readonly ReactiveProperty<int> _hp = new();
     public ReadOnlyReactiveProperty<int> HP => _hp;
 
     private bool _canConvertingToText = true;
+
 
 
     // ---------------------------- UnityMessage
@@ -100,7 +99,7 @@ public class R3Sample : MonoBehaviour
     /// <param name="duration"></param>
     /// <param name="ct"></param>
     /// <returns></returns>
-    async UniTask CountText
+    private async UniTask CountText
         (TextMeshProUGUI text
         , int points
         , float duration

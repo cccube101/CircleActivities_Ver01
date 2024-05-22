@@ -73,17 +73,4 @@ public class TagSample : MonoBehaviour
 
 
 
-    #region ------ Base
-
-    // ---------------------------- Enum
-
-    // ---------------------------- Property
-
-    #region ------ 0
-
-
-
-    #endregion
-
-    #endregion
 }

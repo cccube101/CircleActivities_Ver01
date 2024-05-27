@@ -60,13 +60,17 @@ public class UniTaskEditSample : MonoBehaviour
         var allTasks = new List<UniTask>()
         {
             Move(gameObject, _positions[0].position, _duration, _ease, ct),
-            ScaleTask(gameObject,_scale,_duration,_ease,ct),
+            DelayScaleTask(ct),
         };
+        //  С“Л@КgСе
+        async UniTask DelayScaleTask(CancellationToken ct)
+        {
+            await DelayTime(_duration / 2, ct);
+            await ScaleTask(gameObject, _scale, _duration / 2, _ease, ct);
+        }
+
         await UniTask.WhenAll(allTasks);
     }
-
-
-
 
     #region ------ TweenTask
     /// <summary>

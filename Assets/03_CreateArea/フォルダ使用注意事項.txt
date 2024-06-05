@@ -1,0 +1,67 @@
+タイトルサンプル作成
+いままでの技術を使用してタイトルシーンサンプルを作成してもらいます
+基本的にどのようなコンセプトでも構いません
+以下のルールを読み制作していきましょう
+
+
+
+フォルダ使用注意事項
+・CreateArea外のフォルダは基本的に編集しない
+
+・以下のような階層でフォルダを作成して作業
+
+	Assets -> 03_CreateArea -> Hashimoto
+
+　名前フォルダはローマ字表記
+　名前フォルダ内のフォルダ管理は自由
+
+・スクリプト名クラス名シーン名の最後には必ず _Hashimoto のように名前を付ける
+　例：
+	GameManager_Hashimoto
+	PlayerController_Hashimoto
+	Title_Hashimoto
+
+・使用したいアセットがある場合は相談
+
+・共同編集可　担当などを割り振って自由に作成してください
+
+
+
+分からないことがあったらすぐに聞きましょう
+僕からも様子を見に行きます
+ひとまず期間を指定しません、授業に合わせ自分のできる範囲で作業しましょう
+この制作に飽きたら他の技術等の話をしたいのでまた相談してください
+
+
+
+以下GoogleTaranslate直訳
+
+Title sample creation
+We will have you create a title scene sample using the techniques you have learned so far.
+Basically, any concept is fine.
+Read the following rules and start creating.
+
+Notes on using folders
+・Do not edit folders outside the Create Area.
+
+・Create folders in the following hierarchy and work on them.
+
+Assets -> 03_Create Area -> Hashimoto
+
+Name folders are written in Roman characters.
+You are free to manage folders within the name folder.
+
+・Always name the script name, class name, and scene name with Hashimoto at the end.
+Example:
+	GameManager_Hashimoto
+	PlayerController_Hashimoto
+	Title_Hashimoto
+
+・If there are any assets you would like to use, please ask us.
+
+・Collaboration is possible. Please assign people in charge and create freely.
+
+If there is anything you do not understand, please ask us immediately.
+I will also come and check on you.
+For now, there is no specified period, so let's work within the scope of what you can do according to the class.
+If you get bored with this production, I would like to talk about other technologies, so please consult with us again.
